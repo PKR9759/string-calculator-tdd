@@ -64,7 +64,7 @@ The development followed **Test-Driven Development (TDD)** principles:
 -----
 ## <a name="_tbis3l6kcb6w"></a>**📸 Screenshot**
 
-![Screenshot from 2023-07-16 05-05-29](https://github.com/user-attachments/assets/59fbfca7-efd4-489c-b201-0326996744fe)
+![Screenshot from 2025-07-05 15-51-42](https://github.com/user-attachments/assets/5893481a-7fd8-4634-bcfa-288650045c04)
 
 
 -----
