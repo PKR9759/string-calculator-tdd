@@ -55,3 +55,10 @@ test('returns number itself for single number input', () => {
     expect(calculator.Add("//[**][%%]\n1**2%%3")).toBe(6);
   });
   
+  test('tracks how many times Add has been called', () => {
+    const calculator = new StringCalculator();
+    calculator.Add("1,2");
+    calculator.Add("3,4");
+    expect(calculator.GetCalledCount()).toBe(2);
+  });
+  
