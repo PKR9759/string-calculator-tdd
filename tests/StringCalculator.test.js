@@ -43,4 +43,9 @@ test('returns number itself for single number input', () => {
     expect(calculator.Add("1000,2")).toBe(1002);
     expect(calculator.Add("1001,1002")).toBe(0);
   });
+
+  test('supports delimiters of any length using //[delimiter]\\n format', () => {
+    const calculator = new StringCalculator();
+    expect(calculator.Add("//[***]\n1***2***3")).toBe(6);
+  });
   
