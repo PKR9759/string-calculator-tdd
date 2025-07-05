@@ -14,4 +14,10 @@ test('returns number itself for single number input', () => {
     const calculator = new StringCalculator();
     expect(calculator.Add("1,2")).toBe(3);
   });
+
+  test('returns sum of unknown amount of numbers', () => {
+    const calculator = new StringCalculator();
+    expect(calculator.Add("1,2,3,4")).toBe(10);
+    expect(calculator.Add("5,5,5,5,5")).toBe(25);
+  });
   
