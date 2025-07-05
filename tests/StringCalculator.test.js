@@ -30,4 +30,11 @@ test('returns number itself for single number input', () => {
     const calculator = new StringCalculator();
     expect(calculator.Add("//;\n1;2")).toBe(3);
   });
+
+  test('throws exception for negative numbers with the negative values listed', () => {
+    const calculator = new StringCalculator();
+    expect(() => calculator.Add("1,-2")).toThrow("negatives not allowed: -2");
+    expect(() => calculator.Add("1,-2,-5")).toThrow("negatives not allowed: -2, -5");
+  });
+  
   
