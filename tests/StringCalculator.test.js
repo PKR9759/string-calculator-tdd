@@ -25,4 +25,9 @@ test('returns number itself for single number input', () => {
     const calculator = new StringCalculator();
     expect(calculator.Add("1\n2,3")).toBe(6);
   });
+
+  test('supports custom single-character delimiter', () => {
+    const calculator = new StringCalculator();
+    expect(calculator.Add("//;\n1;2")).toBe(3);
+  });
   
