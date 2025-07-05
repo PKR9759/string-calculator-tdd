@@ -21,3 +21,8 @@ test('returns number itself for single number input', () => {
     expect(calculator.Add("5,5,5,5,5")).toBe(25);
   });
   
+  test('supports newlines as delimiters along with commas', () => {
+    const calculator = new StringCalculator();
+    expect(calculator.Add("1\n2,3")).toBe(6);
+  });
+  
