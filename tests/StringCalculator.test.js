@@ -48,4 +48,10 @@ test('returns number itself for single number input', () => {
     const calculator = new StringCalculator();
     expect(calculator.Add("//[***]\n1***2***3")).toBe(6);
   });
+
+  test('supports multiple custom delimiters', () => {
+    const calculator = new StringCalculator();
+    expect(calculator.Add("//[*][%]\n1*2%3")).toBe(6);
+    expect(calculator.Add("//[**][%%]\n1**2%%3")).toBe(6);
+  });
   
