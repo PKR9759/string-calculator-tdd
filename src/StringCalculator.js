@@ -1,5 +1,9 @@
 class StringCalculator {
+    #callCount = 0;
+
     Add(numbers) {
+        this.#callCount++;
+
         if (numbers === "") return 0;
 
         let delimiter = /[,\n]/;
@@ -30,8 +34,11 @@ class StringCalculator {
         const validNums = nums.filter(n => n <= 1000);
         return validNums.reduce((sum, num) => sum + num, 0);
     }
-}
 
+    GetCalledCount() {
+        return this.#callCount;
+    }
+}
 
 
 module.exports = { StringCalculator };
