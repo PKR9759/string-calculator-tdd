@@ -12,9 +12,16 @@ class StringCalculator {
         }
 
         const nums = numbers.split(delimiter).map(Number);
+
+        const negatives = nums.filter(n => n < 0);
+        if (negatives.length > 0) {
+            throw new Error(`negatives not allowed: ${negatives.join(", ")}`);
+        }
+
         return nums.reduce((sum, num) => sum + num, 0);
     }
 }
+
 
 
 module.exports = { StringCalculator };
