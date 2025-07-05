@@ -6,9 +6,18 @@ class StringCalculator {
 
         if (numbers.startsWith("//")) {
             const delimiterLineEnd = numbers.indexOf('\n');
-            const delimiterString = numbers.substring(2, delimiterLineEnd);
-            delimiter = new RegExp(`[${delimiterString}]`);
+            const delimiterPart = numbers.substring(2, delimiterLineEnd);
             numbers = numbers.substring(delimiterLineEnd + 1);
+
+            if (delimiterPart.startsWith("[")) {
+                const delimiterMatches = [...delimiterPart.matchAll(/\[(.+?)\]/g)];
+                const escaped = delimiterMatches.map(m =>
+                    m[1].replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+                );
+                delimiter = new RegExp(escaped.join("|"));
+            } else {
+                delimiter = new RegExp(`[${delimiterPart}]`);
+            }
         }
 
         const nums = numbers.split(delimiter).map(Number);
