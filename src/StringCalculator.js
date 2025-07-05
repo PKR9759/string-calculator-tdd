@@ -18,7 +18,8 @@ class StringCalculator {
             throw new Error(`negatives not allowed: ${negatives.join(", ")}`);
         }
 
-        return nums.reduce((sum, num) => sum + num, 0);
+        const validNums = nums.filter(n => n <= 1000);
+        return validNums.reduce((sum, num) => sum + num, 0);
     }
 }
 
