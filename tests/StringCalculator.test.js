@@ -37,4 +37,10 @@ test('returns number itself for single number input', () => {
     expect(() => calculator.Add("1,-2,-5")).toThrow("negatives not allowed: -2, -5");
   });
   
+  test('ignores numbers greater than 1000', () => {
+    const calculator = new StringCalculator();
+    expect(calculator.Add("2,1001")).toBe(2);
+    expect(calculator.Add("1000,2")).toBe(1002);
+    expect(calculator.Add("1001,1002")).toBe(0);
+  });
   
